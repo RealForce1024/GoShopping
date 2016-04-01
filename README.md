@@ -1,5 +1,5 @@
 # GoShopping
-my shopping site project
+My shopping site project
 
 ## maven 
 - tomcat:run
