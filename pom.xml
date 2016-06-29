@@ -16,7 +16,7 @@
                 <version>2.2</version>
                 <configuration>
                     <url>http://localhost:8080/manager/text</url><!--远程热部署 生产环境ip替换-->
-                    <!--<path>/</path>--><!-- / 默认覆盖tomcat Root -->
+                    <!--<path>/</path>--><!-- / 打开的话 默认并不覆盖tomcat Root 如果需要强制覆盖需tomcat7:redeploy命令-->
                     <server>tomcat</server>
                     <username>tomcat</username>
                     <password>123456</password>
