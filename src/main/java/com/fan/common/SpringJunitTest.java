@@ -6,7 +6,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 /**
  * 基于Spring的junit 单元测试 公用类
- * @author lx
+ * @author fqc
  *
  */
 @RunWith(SpringJUnit4ClassRunner.class)
