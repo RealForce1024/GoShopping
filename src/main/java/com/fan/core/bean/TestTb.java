@@ -5,21 +5,13 @@ import java.util.Date;
 /**
  * Created by fqc on 2016/6/29.
  */
-public class Test_Tb {
+public class TestTb {
 
 
     private Integer id;
     private String name;
     private Date birthday;
 
-    public Test_Tb() {
-
-    }
-
-    public Test_Tb( String name, Date birthday) {
-        this.name = name;
-        this.birthday = birthday;
-    }
 
     public Integer getId() {
         return id;

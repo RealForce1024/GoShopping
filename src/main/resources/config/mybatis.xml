@@ -5,9 +5,8 @@
     <!-- 创建Mybatis SessionFactory -->
     <bean class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource" />
-        <!-- <property name="mapperLocations" value="classpath:com/fan/core/dao/*.xml" />  -->
-        <property name="typeAliasesPackage" value="com.fan.core.bean,com.fan.core.query"/>
-        <!-- <property name="configLocation" value="classpath:mybatis-config.xml"/> -->
+        <property name="mapperLocations" value="classpath:com/fan/core/dao/*.xml"/>
+        <property name="typeAliasesPackage" value="com.fan.core.bean"/>
     </bean>
 
     <!-- 配置Mybatis扫描 -->
