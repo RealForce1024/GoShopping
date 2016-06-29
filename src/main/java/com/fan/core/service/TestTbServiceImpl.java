@@ -20,6 +20,6 @@ public class TestTbServiceImpl implements TestTbService {
     @Override
     public void add(TestTb tb) {
         testTbDao.addTestTb(tb);
-        int a = 1/0;//测试事务添加
+        //int a = 1/0;//测试事务添加
     }
 }

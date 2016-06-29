@@ -1,4 +1,4 @@
-package com.fan.common;
+package com.fan.common.junit;
 
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;

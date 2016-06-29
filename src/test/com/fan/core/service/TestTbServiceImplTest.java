@@ -1,6 +1,6 @@
 package com.fan.core.service;
 
-import com.fan.common.SpringJunitTest;
+import com.fan.common.junit.SpringJunitTest;
 import com.fan.core.bean.TestTb;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
