@@ -4,12 +4,15 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
     <!-- 创建Mybatis SessionFactory -->
     <bean class="org.mybatis.spring.SqlSessionFactoryBean">
+        <!--引用数据源-->
         <property name="dataSource" ref="dataSource" />
+        <!--mybatis映射文件位置-->
         <property name="mapperLocations" value="classpath:com/fan/core/dao/*.xml"/>
+        <!--对于指定包下的bean统一进行别名配置-->
         <property name="typeAliasesPackage" value="com.fan.core.bean"/>
     </bean>
 
-    <!-- 配置Mybatis扫描 -->
+    <!-- 配置Mybatis扫描 这里的dao层非spring注入，而是mybatis自己管理-->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="com.fan.core.dao"/>
     </bean>
