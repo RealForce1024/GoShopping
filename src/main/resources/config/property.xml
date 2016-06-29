@@ -3,7 +3,7 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <!-- 读取properties 文件 注意此类可以重写加密property文件 TODO-->
+    <!-- 读取properties 文件 填充jdbc.xml中的变量 注意此类可以重写加密property文件 TODO-->
     <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="locations">
             <list>
