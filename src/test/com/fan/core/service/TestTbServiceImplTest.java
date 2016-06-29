@@ -15,6 +15,8 @@ public class TestTbServiceImplTest extends SpringJunitTest {
     public void add() throws Exception {
         TestTb testTb = new TestTb();
         tbService.add(testTb);
+        //int a = 1/0; 注意这里已经跑出了事务层，因此即使配置了事务处理，也不会作用到这里
+
     }
 
 }
