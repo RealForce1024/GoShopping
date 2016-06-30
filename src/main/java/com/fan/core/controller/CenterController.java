@@ -1,9 +1,15 @@
 package com.fan.core.controller;
 
+import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.support.WebBindingInitializer;
+import org.springframework.web.context.request.WebRequest;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -17,4 +23,25 @@ public class CenterController {
         System.out.println(birthday);
         return "index";
     }
+
+    @InitBinder
+    public void initBinder(WebDataBinder binder, WebRequest request) {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yy-MM-dd HH:mm:ss"); //注意springmvc的数据绑定 参数不匹配的话 无法正确请求 例如:2016-01-01 13:14
+        binder.registerCustomEditor(Date.class, new CustomDateEditor(simpleDateFormat, true));
+    }
 }
+/*
+@Controller
+public class CenterController implements WebBindingInitializer{
+    @RequestMapping(value = "/test/index.do", method = RequestMethod.POST)
+    public String test(String name, Date birthday) {
+        System.out.println(name);
+        System.out.println(birthday);
+        return "index";
+    }
+
+    public void initBinder(WebDataBinder binder, WebRequest request) {
+
+    }
+}
+*/

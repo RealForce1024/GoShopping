@@ -8,7 +8,7 @@
 <body>
 <form action="/test/index.do" method="post">
     <input type="text" name="name"><br/>
-    <input type="text" name="birthday" value="2016-01-01 13:14">
+    <input type="text" name="birthday" value="2016-01-01 13:14"><br/>
     <input type="submit" value="提交">
 </form>
 </body>
