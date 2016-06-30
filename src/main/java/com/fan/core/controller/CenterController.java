@@ -24,11 +24,11 @@ public class CenterController {
         return "index";
     }
 
-    @InitBinder
+    /*@InitBinder  //局部配置类型转换器，但是全局更加一劳永逸
     public void initBinder(WebDataBinder binder, WebRequest request) {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yy-MM-dd HH:mm:ss"); //注意springmvc的数据绑定 参数不匹配的话 无法正确请求 例如:2016-01-01 13:14
         binder.registerCustomEditor(Date.class, new CustomDateEditor(simpleDateFormat, true));
-    }
+    }*/
 }
 /*
 @Controller

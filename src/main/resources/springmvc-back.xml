@@ -11,10 +11,17 @@
      http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
 
     <!-- springmvc 扫包  @Controller @Service  .....-->
-    <context:component-scan base-package="com.fan" use-default-filters="false"><!--默认为true，这里改为false，用意是只扫描@Controller层-->
+    <context:component-scan base-package="com.fan"
+                            use-default-filters="false"><!--默认为true，这里改为false，用意是只扫描@Controller层-->
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
 
+    <!--配置全局日期转换器-->
+    <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+        <property name="webBindingInitializer">
+            <bean class="com.fan.core.web.CustomDateConvetor"/>
+        </property>
+    </bean>
     <!-- jsp视图 -->
     <bean id="jspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/back_page/"/>
