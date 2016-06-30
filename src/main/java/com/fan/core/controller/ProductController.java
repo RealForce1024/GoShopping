@@ -16,7 +16,23 @@ import java.util.Date;
  * Created by fqc on 2016/6/30.
  */
 @Controller
-public class CenterController {
+@RequestMapping("/admin")
+public class ProductController {
+
+    //后台统一定位/admin/xx.do，所以将/admin提取出
+    //@RequestMapping(value = "/admin/index.do", method = RequestMethod.POST)
+    @RequestMapping(value = "/index.do")
+    public String index(String name, Date birthday) {
+        return "index";
+    }
+
+    /**
+     * 测试
+     *
+     * @param name
+     * @param birthday
+     * @return
+     */
     @RequestMapping(value = "/test/index.do", method = RequestMethod.POST)
     public String test(String name, Date birthday) {
         System.out.println(name);
