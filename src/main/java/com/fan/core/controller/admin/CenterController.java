@@ -7,10 +7,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import java.util.Date;
 
 /**
+ * 主体框架页面跳转
  * Created by fqc on 2016/6/30.
  */
 @Controller
-@RequestMapping("/admin")
+@RequestMapping("admin")
 public class CenterController {
     /**
      * 默认跳转页面（目前用于 开发中方便测试）
@@ -18,7 +19,7 @@ public class CenterController {
      * @param birthday
      * @return
      */
-    @RequestMapping(value = "/test.do")///test/test.do但是请注意跳转后的页面的上下文路径是相对于/admin/test/*...路径的，因此这里的test就去掉吧
+    @RequestMapping(value = "test.do")///test/test.do但是请注意跳转后的页面的上下文路径是相对于/admin/test/*...路径的，因此这里的test就去掉吧
     public String test(String name, Date birthday) {
         System.out.println(name);
         System.out.println(birthday);
@@ -27,20 +28,20 @@ public class CenterController {
     }
 
     //跳转入口页面
-    @RequestMapping("/index.do")
+    @RequestMapping("index.do")
     public String index() {
         System.out.println("index.do");
         return "index";
     }
 
     //跳转头页面
-    @RequestMapping("/top.do")
+    @RequestMapping("top.do")
     public String top() {
         return "top";
     }
 
     //跳转主体页面
-    @RequestMapping("/main.do")
+    @RequestMapping("main.do")
     public String main() {
         return "main";
     }
