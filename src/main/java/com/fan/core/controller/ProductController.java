@@ -16,7 +16,6 @@ import java.util.Date;
  * Created by fqc on 2016/6/30.
  */
 @Controller
-@RequestMapping("/admin")
 public class ProductController {
 
     //后台统一定位/admin/xx.do，所以将/admin提取出
@@ -37,6 +36,7 @@ public class ProductController {
     public String test(String name, Date birthday) {
         System.out.println(name);
         System.out.println(birthday);
+        System.out.println("进入product");
         return "index";
     }
 

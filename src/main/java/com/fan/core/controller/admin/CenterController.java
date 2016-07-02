@@ -10,6 +10,7 @@ import java.util.Date;
  * Created by fqc on 2016/6/30.
  */
 @Controller
+@RequestMapping("/admin")
 public class CenterController {
     @RequestMapping(value = "/test/index.do")
     public String test(String name, Date birthday) {
