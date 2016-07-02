@@ -20,10 +20,6 @@ public class FrameController {
         return "frame/product_left";
     }
 
-    @RequestMapping("product_right.do")
-    public String product_right() {
-        return "frame/product_right";
-    }
 
 
 
