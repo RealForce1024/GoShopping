@@ -46,6 +46,33 @@ public class CenterController {
     }
 
 
+    //跳转左侧菜单页面
+    @RequestMapping("left.do")
+    public String left() {
+        return "left";
+    }
+
+    //跳转右侧主体内容页面
+    @RequestMapping("right.do")
+    public String right() {
+        return "right";
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     /*@InitBinder  //局部配置类型转换器，但是全局更加一劳永逸
     public void initBinder(WebDataBinder binder, WebRequest request) {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yy-MM-dd HH:mm:ss"); //注意springmvc的数据绑定 参数不匹配的话 无法正确请求 例如:2016-01-01 13:14
