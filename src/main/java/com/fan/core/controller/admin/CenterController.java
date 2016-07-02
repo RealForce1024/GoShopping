@@ -17,7 +17,7 @@ public class CenterController {
         System.out.println(name);
         System.out.println(birthday);
         System.out.println("进入admin中，只是路径匹配，与包结构无关");
-        return "index";
+        return "index";// back_page/index 对应 "/WEB-INF/back_page/back_page/index.jsp"
     }
 
     /*@InitBinder  //局部配置类型转换器，但是全局更加一劳永逸

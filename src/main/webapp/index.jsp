@@ -6,9 +6,9 @@
     <title>Document</title>
 </head>
 <body>
-<form action="/test/index.do" method="post">
-    <input type="text" name="name"><br/>
-    <input type="text" name="birthday" value="2016-01-01 13:14"><br/>
+<form action="admin/test/index.do" method="post">
+    <input type="text" name="name" value="kobe"><br/>
+    <input type="text" name="birthday" value="2016-01-01 13:14:16"><br/>
     <input type="submit" value="提交">
 </form>
 </body>
