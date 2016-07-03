@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.fan.core.dao.product.BrandDao">
+
+    <!-- resultMap  -->
+    <resultMap type="Brand" id="brand">
+        <result column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="description" property="description"/>
+        <result column="img_url" property="imgUrl"/>
+        <result column="sort" property="sort"/>
+        <result column="is_display" property="isDisplay"/>
+    </resultMap>
+
+    <!--  添加品牌数据  -->
+    <insert id="addBrand" parameterType="Brand">
+        insert into bbs_brand
+        <trim prefix="(" suffix=")">
+            name ,
+            description,
+            img_url,
+            sort,
+            is_display
+        </trim>
+        VALUES
+        <trim prefix="(" suffix=")">
+            #{name},
+            #{description},
+            #{imgUrl},
+            #{sort},
+            #{isDisplay}
+        </trim>
+    </insert>
+
+</mapper>

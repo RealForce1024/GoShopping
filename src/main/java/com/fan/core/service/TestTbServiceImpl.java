@@ -17,7 +17,6 @@ public class TestTbServiceImpl implements TestTbService {
     @Resource
     private TestTbDao testTbDao;
 
-    @Override
     public void add(TestTb tb) {
         testTbDao.addTestTb(tb);
         //int a = 1/0;//测试事务添加
