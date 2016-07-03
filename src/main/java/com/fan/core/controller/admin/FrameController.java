@@ -21,6 +21,14 @@ public class FrameController {
     }
 
 
+    @RequestMapping("order_main.do")
+    public String order_main() {
+        return "frame/order_main";
+    }
 
+    @RequestMapping("order_left.do")
+    public String order_left() {
+        return "frame/order_left";
+    }
 
 }
