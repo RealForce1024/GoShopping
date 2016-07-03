@@ -60,28 +60,14 @@ public class CenterController {
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    /*@InitBinder  //局部配置类型转换器，但是全局更加一劳永逸
+    /*@InitBinder  //局部配置类型转换器 方式1-注解方式，但是全局更加一劳永逸
     public void initBinder(WebDataBinder binder, WebRequest request) {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yy-MM-dd HH:mm:ss"); //注意springmvc的数据绑定 参数不匹配的话 无法正确请求 例如:2016-01-01 13:14
         binder.registerCustomEditor(Date.class, new CustomDateEditor(simpleDateFormat, true));
     }*/
 }
 /*
-@Controller
+@Controller  //局部配置类型转换器 方式2-实现 WebBindingInitializer接口
 public class CenterController implements WebBindingInitializer{
     @RequestMapping(value = "/test/index.do", method = RequestMethod.POST)
     public String test(String name, Date birthday) {
