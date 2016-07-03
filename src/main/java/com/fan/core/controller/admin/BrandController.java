@@ -29,8 +29,8 @@ public class BrandController {
         return "brand/list";
     }
 
-    @RequestMapping("add.do")
-    public String add() {
+    @RequestMapping("toAdd.do")
+    public String toAdd() {
         return "brand/add";
     }
 }
