@@ -20,6 +20,6 @@ public interface BrandDao {
 
     List<Brand> getBrandListWithPage(Brand brand);
 
-    Integer getBrandCount();
+    Integer getBrandCount(Brand brand);
 
 }

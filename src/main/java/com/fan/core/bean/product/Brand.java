@@ -18,7 +18,7 @@ public class Brand {
 
     //*****分页相关的属性******************************************************
 
-    // 页号  初始值为1
+    // a. 页号  初始值为1
     private Integer pageNo = 1;
 
     //1 1*5 2 6*10 3 11*15
@@ -26,10 +26,10 @@ public class Brand {
     //开始行  在每次setPageNo 和 setPageSize的时候 都需要重新计算一遍
     private Integer startRow;
 
-    // 每页数
+    // b. 每页数
     private Integer pageSize = 10;
 
-    //总页数 totalPageSize = getCount()%pageSize
+    // c. 总页数 totalPageSize = getCount()%pageSize
     // 100 5 20  100/5 20 这显然不对 所以应该使用取模运算 count(数据库中所有的条目总数)%size(每页显示的条目数)
     private Integer totalPageSize;
 

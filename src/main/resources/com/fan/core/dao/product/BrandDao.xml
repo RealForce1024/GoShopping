@@ -53,9 +53,10 @@
     </select>
 
 
-    <select id="getBrandCount" resultType="java.lang.Integer">
+    <select id="getBrandCount" parameterType="Brand" resultType="java.lang.Integer">
         select count(1)
         from bbs_brand
+        where is_display = ${isDisplay}
     </select>
 
 

@@ -17,6 +17,6 @@ public interface BrandService {
 
     List<Brand> getBrandListWithPage(Brand brand);
 
-    Integer getBrandCount();
+    Integer getBrandCount(Brand brand);
 
 }

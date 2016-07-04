@@ -39,8 +39,8 @@ public class BrandServiceImpl implements BrandService {
     }
 
     @Override
-    public Integer getBrandCount() {
-        Integer brandCount = brandDao.getBrandCount();
+    public Integer getBrandCount(Brand brand) {
+        Integer brandCount = brandDao.getBrandCount(brand);
         return brandCount;
     }
 }

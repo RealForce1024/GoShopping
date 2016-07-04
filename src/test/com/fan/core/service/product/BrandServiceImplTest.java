@@ -18,6 +18,23 @@ public class BrandServiceImplTest extends SpringJunitTest {
     private BrandService brandService;
 
     @Test
+    public void getBrandCount() throws Exception {
+        Brand brand = new Brand();
+        brand.setIsDisplay(1);
+        Integer brandCount = brandService.getBrandCount(brand);
+        System.out.println(brandCount);
+    }
+
+    @Test
+    public void getBrandListWithPage() throws Exception {
+        Brand brand = new Brand();
+        brand.setName("test");
+        brand.setIsDisplay(1);
+        brandService.getBrandList();
+        brandService.getBrandListWithPage(brand);
+    }
+
+    @Test
     public void getBrandByCondition() throws Exception {
         Brand brand = new Brand();
         brand.setName("test");
