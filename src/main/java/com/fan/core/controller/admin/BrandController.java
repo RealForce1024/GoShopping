@@ -53,6 +53,4 @@ public class BrandController {
         return "redirect:brand/list.do";
     }
 
-
-
 }

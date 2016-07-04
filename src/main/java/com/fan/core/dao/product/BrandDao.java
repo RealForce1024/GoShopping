@@ -16,4 +16,7 @@ public interface BrandDao {
 
     List<Brand> getBrandList();
 
+    List<Brand> getBrandByCondition(Brand brand);
+
+
 }

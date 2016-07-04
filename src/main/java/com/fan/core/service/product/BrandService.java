@@ -13,4 +13,6 @@ public interface BrandService {
 
     List<Brand> getBrandList();
 
+    List<Brand> getBrandByCondition(Brand brand);
+
 }
