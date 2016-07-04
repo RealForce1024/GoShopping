@@ -3,6 +3,7 @@ package com.fan.core.controller.admin;
 import cn.itcast.common.page.Pagination;
 import com.fan.core.bean.product.Brand;
 import com.fan.core.service.product.BrandService;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
@@ -57,17 +58,19 @@ public class BrandController {
 
     /**
      * 品牌列表页
-     *
+     * 条件啥的，最好不要使用来接，直接采用字段最好，然后new对象设置进去
      * @return
      */
     @RequestMapping("getBrandListWithPage.do")
-    public String getBrandListWithPage(String name, String isDisplay, ModelMap modelMap) {
+    public String getBrandListWithPage(String name, String isDisplay,String pageNo, ModelMap modelMap) {
         Brand brand = new Brand();
-        brand.setName(name);
+        if (StringUtils.isNotBlank(name)) {
+            brand.setName(name);
+        }
         brand.setIsDisplay(Integer.parseInt(isDisplay));
-        Pagination brandList = brandService.getBrandListWithPage(brand);
-        if (brandList != null) {//为空则不返回页面自然为空没数据。否则报错
-            modelMap.addAttribute(brandList);
+        Pagination pagination = brandService.getBrandListWithPage(brand);
+        if (pagination != null) {//为空则不返回页面自然为空没数据。否则报错
+            modelMap.addAttribute(pagination);
         }
         return "brand/list";
     }
