@@ -5,7 +5,10 @@ import com.fan.core.service.product.BrandService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.List;
 
 /**
  * Created by fqc on 2016/7/2.
@@ -26,9 +29,10 @@ public class BrandController {
      * @return
      */
     @RequestMapping("list.do")
-    public String list() {
+    public String list(ModelMap modelMap) {
         //后台查询遍历 返回
-
+        List<Brand> brandList = brandService.getBrandList();
+        modelMap.addAttribute(brandList);
         return "brand/list";
     }
 
