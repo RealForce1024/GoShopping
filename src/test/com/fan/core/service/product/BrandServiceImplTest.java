@@ -6,12 +6,20 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 import static org.junit.Assert.*;
 
 /**
  * Created by fqc on 2016/7/3.
  */
 public class BrandServiceImplTest extends SpringJunitTest {
+    @Test
+    public void getBrandList() throws Exception {
+        List<Brand> brandList = brandService.getBrandList();
+        System.out.println(brandList);
+    }
+
     @Autowired
     private BrandService brandService;
     @Test
@@ -25,5 +33,8 @@ public class BrandServiceImplTest extends SpringJunitTest {
         brandService.addBrand(brand);
 
     }
+
+
+
 
 }

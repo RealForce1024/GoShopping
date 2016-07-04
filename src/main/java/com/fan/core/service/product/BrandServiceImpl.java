@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * Created by fqc on 2016/7/3.
@@ -16,5 +17,11 @@ public class BrandServiceImpl implements BrandService {
     private BrandDao brandDao;
     public void addBrand(Brand brand) {
         brandDao.addBrand(brand);
+    }
+
+    @Override
+    public List<Brand> getBrandList() {
+        List<Brand> brandList = brandDao.getBrandList();
+        return brandList;
     }
 }
