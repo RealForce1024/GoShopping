@@ -18,5 +18,8 @@ public interface BrandDao {
 
     List<Brand> getBrandByCondition(Brand brand);
 
+    List<Brand> getBrandListWithPage(Brand brand);
+
+    Integer getBrandCount();
 
 }

@@ -16,6 +16,20 @@ public class Brand {
     private Integer sort;
     private Integer isDisplay;
 
+    //*****分页相关的属性******************************************************
+    private Integer pageNo; // 页码
+    //1 1*5 2 6*10 3 11*15
+    //(2-1)*5+1  (pageNo-1)* pageSize+1
+    private Integer startNum; //起始条目
+
+    private Integer pageSize = 5;
+
+    //总页数
+    // 100 5 20  100/5 20 这显然不对 所以应该使用取模运算 count(数据库中所有的条目总数)%size(每页显示的条目数)
+    private Integer totalPageSize;
+
+
+    //**********************************************************************
 
     public Integer getId() {
         return id;

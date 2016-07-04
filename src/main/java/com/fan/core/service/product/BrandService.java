@@ -15,4 +15,8 @@ public interface BrandService {
 
     List<Brand> getBrandByCondition(Brand brand);
 
+    List<Brand> getBrandListWithPage(Brand brand);
+
+    Integer getBrandCount();
+
 }

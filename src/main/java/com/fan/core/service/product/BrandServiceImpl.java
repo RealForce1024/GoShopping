@@ -15,6 +15,7 @@ import java.util.List;
 public class BrandServiceImpl implements BrandService {
     @Resource
     private BrandDao brandDao;
+
     public void addBrand(Brand brand) {
         brandDao.addBrand(brand);
     }
@@ -27,7 +28,19 @@ public class BrandServiceImpl implements BrandService {
 
     @Override
     public List<Brand> getBrandByCondition(Brand brand) {
-        List<Brand> brandList= brandDao.getBrandByCondition(brand);
+        List<Brand> brandList = brandDao.getBrandByCondition(brand);
         return brandList;
+    }
+
+    @Override
+    public List<Brand> getBrandListWithPage(Brand brand) {
+        List<Brand> brandList = brandDao.getBrandListWithPage(brand);
+        return brandList;
+    }
+
+    @Override
+    public Integer getBrandCount() {
+        Integer brandCount = brandDao.getBrandCount();
+        return brandCount;
     }
 }
