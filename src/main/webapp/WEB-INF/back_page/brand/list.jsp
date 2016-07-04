@@ -16,11 +16,11 @@
     <div class="clear"></div>
 </div>
 <div class="body-box">
-<form action="v_list.shtml" method="post" style="padding-top:5px;">
+<form action="getListByCondition.do" method="post" style="padding-top:5px;">
     品牌名称: <input type="text" name="name"/>
-    <select>
+    <select name="isDisplay">
         <option value="1">是</option>
-        <option>不是</option>
+        <option value="0">不是</option>
     </select>
     <input type="submit" class="query" value="查询"/>
 </form>

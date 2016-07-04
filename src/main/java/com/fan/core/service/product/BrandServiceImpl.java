@@ -27,9 +27,7 @@ public class BrandServiceImpl implements BrandService {
 
     @Override
     public List<Brand> getBrandByCondition(Brand brand) {
-
         List<Brand> brandList= brandDao.getBrandByCondition(brand);
-        System.out.println(brandList);
-        return null;
+        return brandList;
     }
 }

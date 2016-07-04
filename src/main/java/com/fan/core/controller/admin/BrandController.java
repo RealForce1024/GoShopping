@@ -36,6 +36,24 @@ public class BrandController {
         return "brand/list";
     }
 
+    /**
+     * 品牌列表页
+     *
+     * @return
+     */
+    @RequestMapping("getListByCondition.do")
+    public String getListByCondition(String name,String isDisplay,ModelMap modelMap) {
+        Brand brand = new Brand();
+        brand.setName(name);
+        brand.setIsDisplay(Integer.parseInt(isDisplay));
+        List<Brand> brandList = brandService.getBrandByCondition(brand);
+        if (brandList!=null) {//为空则不返回页面自然为空没数据。否则报错
+            modelMap.addAttribute(brandList);
+        }
+        return "brand/list";
+    }
+
+
     @RequestMapping("toAdd.do")
     public String toAdd() {
         return "brand/add";
