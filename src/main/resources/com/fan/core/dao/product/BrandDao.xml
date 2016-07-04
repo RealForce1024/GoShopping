@@ -56,7 +56,13 @@
     <select id="getBrandCount" parameterType="Brand" resultType="java.lang.Integer">
         select count(1)
         from bbs_brand
-        where is_display = ${isDisplay}
+        where
+        <if test="name != null">
+            name=#{name}
+        </if>
+        <if test="isDisplay != null">
+            and is_display=#{isDisplay}
+        </if>
     </select>
 
 
