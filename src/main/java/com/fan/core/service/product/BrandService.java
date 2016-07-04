@@ -1,5 +1,6 @@
 package com.fan.core.service.product;
 
+import cn.itcast.common.page.Pagination;
 import com.fan.core.bean.product.Brand;
 
 import java.util.List;
@@ -15,7 +16,7 @@ public interface BrandService {
 
     List<Brand> getBrandByCondition(Brand brand);
 
-    List<Brand> getBrandListWithPage(Brand brand);
+    Pagination getBrandListWithPage(Brand brand);
 
     Integer getBrandCount(Brand brand);
 

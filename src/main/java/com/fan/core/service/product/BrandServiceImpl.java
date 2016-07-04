@@ -5,6 +5,7 @@ import com.fan.core.bean.product.Brand;
 import com.fan.core.dao.product.BrandDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -13,6 +14,7 @@ import java.util.List;
  * Created by fqc on 2016/7/3.
  */
 @Service
+@Transactional
 public class BrandServiceImpl implements BrandService {
     @Resource
     private BrandDao brandDao;
@@ -34,7 +36,8 @@ public class BrandServiceImpl implements BrandService {
     }
 
     @Override
-    public List<Brand> getBrandListWithPage(Brand brand) {
+    @Transactional(readOnly = true)
+    public Pagination getBrandListWithPage(Brand brand) {
         //分页对象
         //1.起始行 startRow
         //2.每页数
@@ -42,7 +45,7 @@ public class BrandServiceImpl implements BrandService {
         Pagination pagination = new Pagination((brand.getPageNo()-1)*5,5,brandDao.getBrandCount(brand));
         List<Brand> brandList = brandDao.getBrandListWithPage(brand);
         pagination.setList(brandList);
-        return brandList;
+        return pagination;
     }
 
     @Override

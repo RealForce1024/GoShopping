@@ -1,5 +1,6 @@
 package com.fan.core.controller.admin;
 
+import cn.itcast.common.page.Pagination;
 import com.fan.core.bean.product.Brand;
 import com.fan.core.service.product.BrandService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,12 +43,30 @@ public class BrandController {
      * @return
      */
     @RequestMapping("getListByCondition.do")
-    public String getListByCondition(String name,String isDisplay,ModelMap modelMap) {
+    public String getListByCondition(String name, String isDisplay, ModelMap modelMap) {
         Brand brand = new Brand();
         brand.setName(name);
         brand.setIsDisplay(Integer.parseInt(isDisplay));
         List<Brand> brandList = brandService.getBrandByCondition(brand);
-        if (brandList!=null) {//为空则不返回页面自然为空没数据。否则报错
+        if (brandList != null) {//为空则不返回页面自然为空没数据。否则报错
+            modelMap.addAttribute(brandList);
+        }
+        return "brand/list";
+    }
+
+
+    /**
+     * 品牌列表页
+     *
+     * @return
+     */
+    @RequestMapping("getBrandListWithPage.do")
+    public String getBrandListWithPage(String name, String isDisplay, ModelMap modelMap) {
+        Brand brand = new Brand();
+        brand.setName(name);
+        brand.setIsDisplay(Integer.parseInt(isDisplay));
+        Pagination brandList = brandService.getBrandListWithPage(brand);
+        if (brandList != null) {//为空则不返回页面自然为空没数据。否则报错
             modelMap.addAttribute(brandList);
         }
         return "brand/list";
