@@ -17,16 +17,57 @@ public class Brand {
     private Integer isDisplay;
 
     //*****分页相关的属性******************************************************
-    private Integer pageNo; // 页码
+
+    // 页号  初始值为1
+    private Integer pageNo = 1;
+
     //1 1*5 2 6*10 3 11*15
     //(2-1)*5+1  (pageNo-1)* pageSize+1
-    private Integer startNum; //起始条目
+    //开始行  在每次setPageNo 和 setPageSize的时候 都需要重新计算一遍
+    private Integer startRow;
 
-    private Integer pageSize = 5;
+    // 每页数
+    private Integer pageSize = 10;
 
-    //总页数
+    //总页数 totalPageSize = getCount()%pageSize
     // 100 5 20  100/5 20 这显然不对 所以应该使用取模运算 count(数据库中所有的条目总数)%size(每页显示的条目数)
     private Integer totalPageSize;
+
+    public Integer getPageNo() {
+        return pageNo;
+    }
+
+    public void setPageNo(Integer pageNo) {
+        //计算一次开始行
+        this.pageSize = (pageNo-1)*pageSize+1;
+        this.pageNo = pageNo;
+    }
+
+    public Integer getStartRow() {
+        return startRow;
+    }
+
+    public void setStartRow(Integer startRow) {
+        this.startRow = startRow;
+    }
+
+    public Integer getPageSize() {
+        return pageSize;
+    }
+
+    public void setPageSize(Integer pageSize) {
+        //计算一次开始行
+        this.pageSize = (pageNo-1)*pageSize+1;
+        this.pageSize = pageSize;
+    }
+
+    public Integer getTotalPageSize() {
+        return totalPageSize;
+    }
+
+    public void setTotalPageSize(Integer totalPageSize) {
+        this.totalPageSize = totalPageSize;
+    }
 
 
     //**********************************************************************
