@@ -14,7 +14,7 @@ public class Brand {
     private String description;
     private String imgUrl;
     private Integer sort;
-    private Integer isDisplay;
+    private Integer isDisplay = 1; //默认设置为可用
 
     //*****分页相关的属性******************************************************
 
@@ -39,7 +39,7 @@ public class Brand {
 
     public void setPageNo(Integer pageNo) {
         //计算一次开始行
-        this.pageSize = (pageNo-1)*pageSize+1;
+        this.pageSize = (pageNo - 1) * pageSize + 1;
         this.pageNo = pageNo;
     }
 
@@ -57,7 +57,7 @@ public class Brand {
 
     public void setPageSize(Integer pageSize) {
         //计算一次开始行
-        this.pageSize = (pageNo-1)*pageSize+1;
+        this.pageSize = (pageNo - 1) * pageSize + 1;
         this.pageSize = pageSize;
     }
 
@@ -75,36 +75,47 @@ public class Brand {
     public Integer getId() {
         return id;
     }
+
     public void setId(Integer id) {
         this.id = id;
     }
+
     public String getName() {
         return name;
     }
+
     public void setName(String name) {
         this.name = name;
     }
+
     public String getDescription() {
         return description;
     }
+
     public void setDescription(String description) {
         this.description = description;
     }
+
     public String getImgUrl() {
         return imgUrl;
     }
+
     public void setImgUrl(String imgUrl) {
         this.imgUrl = imgUrl;
     }
+
     public Integer getSort() {
         return sort;
     }
+
     public void setSort(Integer sort) {
         this.sort = sort;
     }
+
     public Integer getIsDisplay() {
         return isDisplay;
     }
+
     public void setIsDisplay(Integer isDisplay) {
         this.isDisplay = isDisplay;
     }

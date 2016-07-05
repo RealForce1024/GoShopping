@@ -30,7 +30,7 @@ public class BrandController {
      *
      * @return
      */
-    @RequestMapping("list.do")
+    //@RequestMapping("list.do")
     public String list(ModelMap modelMap) {
         //后台查询遍历 返回
         List<Brand> brandList = brandService.getBrandList();
@@ -43,7 +43,8 @@ public class BrandController {
      *
      * @return
      */
-    @RequestMapping("getListByCondition.do")
+    //@RequestMapping("getListByCondition.do")
+    //@RequestMapping("list.do")
     public String getListByCondition(String name, String isDisplay, ModelMap modelMap) {
         Brand brand = new Brand();
         brand.setName(name);
@@ -61,13 +62,16 @@ public class BrandController {
      * 条件啥的，最好不要使用来接，直接采用字段最好，然后new对象设置进去
      * @return
      */
-    @RequestMapping("getBrandListWithPage.do")
+    //@RequestMapping("getBrandListWithPage.do")
+    @RequestMapping("list.do")
     public String getBrandListWithPage(String name, String isDisplay,String pageNo, ModelMap modelMap) {
         Brand brand = new Brand();
         if (StringUtils.isNotBlank(name)) {
             brand.setName(name);
         }
-        brand.setIsDisplay(Integer.parseInt(isDisplay));
+        if (StringUtils.isNotBlank(isDisplay)) {
+            brand.setIsDisplay(Integer.parseInt(isDisplay));
+        }
         Pagination pagination = brandService.getBrandListWithPage(brand);
         if (pagination != null) {//为空则不返回页面自然为空没数据。否则报错
             modelMap.addAttribute(pagination);
