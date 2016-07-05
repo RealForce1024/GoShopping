@@ -41,7 +41,7 @@
     <select id="getBrandListWithPage" parameterType="Brand" resultMap="brand">
         select *
         from bbs_brand
-        where
+        where 1=1
         <if test="name != null">
             name=#{name}
         </if>
@@ -56,7 +56,7 @@
     <select id="getBrandCount" parameterType="Brand" resultType="java.lang.Integer">
         select count(1)
         from bbs_brand
-        where
+        where 1=1
         <if test="name != null">
             name=#{name}
         </if>
